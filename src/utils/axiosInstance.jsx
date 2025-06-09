@@ -12,6 +12,9 @@ axiosInstance.interceptors.request.use((config) => {
   return config;
 });
 
+console.log('API URL desde Vite env:', import.meta.env.VITE_API_URL);
+
+
 axiosInstance.interceptors.response.use((response) => response, 
 // handleError
 );
