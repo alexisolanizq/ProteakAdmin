@@ -6,6 +6,7 @@ const EquipmentLifeSheetColumns = () => [
   {
     ...commonProperties,
     field: "folio",
+    minWidth: 180,
     headerName: "Folio",
   },
   {
@@ -24,26 +25,28 @@ const EquipmentLifeSheetColumns = () => [
     ...commonProperties,
     field: "detalle",
     headerName: "Observación",
-    minWidth: 250,
+    minWidth: 350,
   },
   {
     ...commonProperties,
     field: "ot_estado_name",
     headerName: "Estado",
-    minWidth: 100,
+    minWidth: 200,
     renderCell: ({ row }) => StatusCell(row?.ot_estado_code),
   },
   {
     ...commonProperties,
     field: "fecha_ini",
     headerName: "Fecha inicio",
+    minWidth: 160,
     renderCell: ({ row }) => formatDate(row?.fecha_ini),
   },
   {
     ...commonProperties,
     field: "fecha_cierre",
-    headerName: "Fecha inicio",
-    renderCell: ({ row }) => formatDate(row?.fecha_ini),
+    headerName: "Fecha cierre",
+    minWidth: 160,
+    renderCell: ({ row }) => formatDate(row?.fecha_cierre),
   },
 ];
 

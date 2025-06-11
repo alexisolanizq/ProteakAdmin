@@ -5,16 +5,19 @@ const MachinesColumns = ({ onEdit, details }) => [
   {
     ...commonProperties,
     field: "idmatri",
+    minWidth: 140,
     headerName: "Matrícula",
   },
   {
     ...commonProperties,
     field: "name",
+    minWidth: 300,
     headerName: "Equipo",
   },
   {
     ...commonProperties,
     field: "horometro",
+    minWidth: 160,
     headerName: "Horómetro",
   },
   {
@@ -26,7 +29,7 @@ const MachinesColumns = ({ onEdit, details }) => [
     ...commonProperties,
     field: "actions",
     headerName: "Acciones",
-    minWidth: 90,
+    minWidth: 140,
     type: "actions",
     getActions: ({ row }) => [
       <Button key={row} icon="ri-pencil-line" onClick={() => onEdit(row)} />,

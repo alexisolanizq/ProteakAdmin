@@ -5,11 +5,13 @@ const CecosColumns = ({ onEdit }) => [
   {
     ...commonProperties,
     field: "name",
+    minWidth: 300,
     headerName: "Nombre",
   },
   {
     ...commonProperties,
     field: "code",
+    minWidth: 200,
     headerName: "Ceco",
   },
   {

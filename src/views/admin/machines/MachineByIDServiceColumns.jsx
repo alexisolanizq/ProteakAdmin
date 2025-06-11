@@ -24,7 +24,7 @@ const MachineByIDServiceColumns = ({ onDetails }) => [
     ...commonProperties,
     field: "actions",
     headerName: "Configuración",
-    minWidth: 60,
+    minWidth: 120,
     type: "actions",
     getActions: ({ row }) => [
       <Button key={row?.id} icon="ri-tools-line" onClick={() => onDetails(row?.id)} />,

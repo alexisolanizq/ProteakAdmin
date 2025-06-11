@@ -71,7 +71,7 @@ const JobOrdersColumns = ({ onEdit }) => [
     ...commonProperties,
     field: "actions",
     headerName: "Acciones",
-    minWidth: 90,
+    minWidth: 120,
     type: "actions",
     getActions: ({ row }) => [
       <Button key={row} icon="ri-pencil-line" onClick={() => onEdit(row)} />,

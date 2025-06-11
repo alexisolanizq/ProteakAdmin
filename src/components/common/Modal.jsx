@@ -23,7 +23,7 @@ const Modal = ({
           <div className="text-xl font-semibold">{title} <i className={`ri-close-large-line text-lg`} /></div>
         </div>
         <div
-          className={`${classNameBody} h-[550px] px-10 py-4 overflow-y-scroll`}
+          className={`min-w-96 px-6 py-4 overflow-y-scroll ${classNameBody}`}
         >
           {children}
         </div>

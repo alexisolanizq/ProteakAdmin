@@ -62,10 +62,9 @@ DataTable.propTypes = {
 };
 
 export const commonProperties = {
+  flex:1,
   editable: false,
   sortable: true,
-  flex: 1,
-  // minWidth: 200,
   headerAlign: "center",
   align: "center",
 };
