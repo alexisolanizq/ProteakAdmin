@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import Button from "./Button";
 
 const Modal = ({
   isShow = false,
@@ -20,14 +21,17 @@ const Modal = ({
         } mx-auto top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] overflow-hidden`}
       >
         <div className="flex items-center justify-between px-10 py-3 border-b-2">
-          <div className="text-xl font-semibold">{title} <i className={`ri-close-large-line text-lg`} /></div>
+          <div className="text-xl font-semibold">{title}</div>
+          <Button isPlainText onClick={onClose}>
+            <i className="ri-close-line text-xl" />
+          </Button>
         </div>
         <div
           className={`min-w-96 px-6 py-4 overflow-y-scroll ${classNameBody}`}
         >
           {children}
         </div>
-        <div className="flex">
+        {/* <div className="flex">
           <button
             onClick={onClose}
             className="flex-1 py-3 font-semibold bg-gray-400 text-white"
@@ -40,7 +44,7 @@ const Modal = ({
           >
             Guardar
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

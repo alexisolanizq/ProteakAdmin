@@ -1,8 +1,7 @@
+import GeneralLayout from "src/components/common/GeneralLayout";
 
 const Index = () => {
-  return (
-    <div>Index</div>
-  )
-}
+  return <GeneralLayout title="Dashboard administrador" resumen="Administra los registros"></GeneralLayout>;
+};
 
-export default Index
+export default Index;

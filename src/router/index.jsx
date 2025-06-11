@@ -3,6 +3,7 @@ import Layout from "src/components/common/Layout";
 import Cecos from "src/views/admin/cecos/Cecos";
 import EquipmentLifeSheet from "src/views/admin/equipment-life-sheet/EquipmentLifeSheet";
 import Index from "src/views/admin/Index";
+import JobOrderByID from "src/views/admin/job-orders/JobOrderByID";
 import JobOrders from "src/views/admin/job-orders/JobOrders";
 import Machines from "src/views/admin/machines/Machine";
 import MachineById from "src/views/admin/machines/MachineById";
@@ -37,37 +38,37 @@ const routes = createBrowserRouter([
     ),
     children: [
       {
-        path: "dashboard",
+        path: "panel",
         element: <Index />,
       },
       {
-        path: "job-orders",
-        element: <JobOrders />,
+        path: "ordenes-de-trabajo",
+        children: [
+          {
+            path: '',
+            element: <JobOrders />,
+          },
+          {
+            path: ':id',
+            element: <JobOrderByID />
+          }
+        ]
       },
-      // {
-      //   path: "machines",
-      //   children: [
-      //     {
-      //       path: "",
-      //       element: <Machines />,
-      //     },
-      //   ],
-      // },
       {
-        path: "orders",
+        path: "ordenes",
         children: [
           {
             path: "",
             element: <Orders />,
           },
           {
-            path: "requests",
+            path: "solicitudes",
             element: <Request />,
           },
         ],
       },
       {
-        path: "machines",
+        path: "maquinas",
         children: [
           {
             path: "",
@@ -84,7 +85,7 @@ const routes = createBrowserRouter([
         element: <Cecos />,
       },
       {
-        path: "equipment-life-sheet",
+        path: "hoja-de-vida-equipos",
         element: <EquipmentLifeSheet />,
       },
     ],

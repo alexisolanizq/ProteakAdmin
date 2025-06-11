@@ -8,6 +8,7 @@ const Button = ({
   isEnd = false,
   type = "button",
   isSubmit = false,
+  isPlainText = false,
   isCancel = false,
   isLoading = false,
   onClick = () => {},
@@ -20,9 +21,11 @@ const Button = ({
       return "bg-gray-500 text-white hover:shadow-lg hover:ring-gray-100 hover:ring-2";
     if (isSubmit)
       return "bg-primary-600 text-white hover:ring-primary-100 hover:ring-2 hover:shadow-lg";
+    if (isPlainText)
+      return "bg-none border-none shadow-none"
 
     return "bg-primary-600 text-white hover:shadow-lg";
-  }, [isBorderPrimary, isCancel, isSubmit]);
+  }, [isBorderPrimary, isCancel, isSubmit, isPlainText]);
 
   const classNameType = getClassName();
   const classLoading = isLoading && "loading";
@@ -50,6 +53,7 @@ Button.propTypes = {
   isSubmit: PropTypes.bool,
   isCancel: PropTypes.bool,
   isLoading: PropTypes.bool,
+  isPlainText: PropTypes.bool,
   iconClass: PropTypes.string,
   isBorderPrimary: PropTypes.bool,
 };

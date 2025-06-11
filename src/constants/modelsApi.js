@@ -13,6 +13,8 @@ export const API_EQUIPMENT_LIFE_SHEET_SOFTMANTTO =
 export const API_OT_STATUS_SOFTMANTTO = "/EstadosOT";
 export const API_WORKSHOP_SOFTMANTTO = "/taller/6/0";
 export const API_AREA_SOFTMANTTO = "/Zona/6/0";
+export const API_MACHINE_OT_SOFTMANTTO = ({ user = 1438, ot }) =>
+  `OT/6/${user}?idot=${ot}`;
 
 export const API_MACHINE_SERVICES = ({ id }) =>
   `MaquinaServicio/Compartimiento/6/0/${id}/0`;
