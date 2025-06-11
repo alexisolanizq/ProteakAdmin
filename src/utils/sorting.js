@@ -1,3 +1,10 @@
+import { GridLogicOperator } from "@mui/x-data-grid";
+
+export const filterStatus = (nameStatus, value) => ({
+  items: [{ id: 1, field: nameStatus, operator: "is", value: value ?? "true" }],
+  linkOperator: GridLogicOperator.And,
+});
+
 export const sorting = (field, sort = "asc") => ({
   sortModel: [{ field, sort }],
 });

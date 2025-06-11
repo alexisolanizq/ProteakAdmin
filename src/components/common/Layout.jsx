@@ -4,16 +4,35 @@ import Sidebar from "src/components/common/Sidebar";
 import Navbar from "src/components/common/Navbar";
 
 const Layout = () => {
-  const { toggleSidebar, openSidebar } = useSidebar();
+  const { toggleSidebar, sidebarOpen, collapsed, isMobile } = useSidebar();
+  const sidebarWidth = collapsed ? "w-16" : "w-64";
 
   return (
-    <div className="flex relative">
-      <Sidebar openSidebar={openSidebar} />
+    <div className="flex h-screen overflow-hidden">
+      <div
+        className={`hidden md:flex ${sidebarWidth} transition-all duration-300 bg-gray-800 text-white`}
+      >
+        <Sidebar isMobile={isMobile} collapsed={collapsed} />
+      </div>
+
+      {isMobile && sidebarOpen && (
+        <div className="fixed inset-0 z-40 flex md:hidden">
+          <div className="w-64 bg-gray-800 text-white">
+            <Sidebar collapsed={false} />
+          </div>
+          <div
+            className="flex-1 bg-black bg-opacity-50"
+            onClick={() => toggleSidebar()}
+          />
+        </div>
+      )}
+
+      {/* <Sidebar openSidebar={sidebarOpen} collapsed={collapsed} /> */}
       <div className="flex-1 bg-[#F3F6FE] min-h-dvh relative overflow-hidden">
         <Navbar toggleSidebar={toggleSidebar} />
-        <div className="mt-12">
+        <main className="flex-1 bg-gray-100">
           <Outlet />
-        </div>
+        </main>
         <footer></footer>
       </div>
     </div>

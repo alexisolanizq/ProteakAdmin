@@ -4,55 +4,65 @@ import DateCell from "src/components/common/DateCell";
 
 const JobOrdersColumns = ({ onEdit }) => [
   {
-    // ...commonProperties,
+    ...commonProperties,
+    minWidth: 100,
     field: "folio",
     headerName: "Folio",
   },
   {
-    // ...commonProperties,
+    ...commonProperties,
+    minWidth: 100,
     field: "ot_estado_name",
     headerName: "Estado ODT",
   },
   {
     ...commonProperties,
+    minWidth: 200,
     field: "estado_operativo",
     headerName: "Estado Operatividad",
   },
   {
     ...commonProperties,
+    minWidth: 280,
     field: "asociado_a",
     headerName: "Asociado",
   },
   {
     ...commonProperties,
+    minWidth: 300,
     field: "taller",
     headerName: "Taller",
   },
   {
     ...commonProperties,
+    minWidth: 200,
     field: "created_by",
     headerName: "Creado por",
   },
   {
     ...commonProperties,
+    minWidth: 200,
     field: "fecha_ini",
     headerName: "Fecha de inicio",
     renderCell: ({ row }) => <DateCell timestamp={row?.fecha_termino_real} />,
   },
   {
     ...commonProperties,
+    minWidth: 200,
     field: "fecha_termino_estimado",
     headerName: "Fecha termino estimada",
     renderCell: ({ row }) => <DateCell timestamp={row?.fecha_termino_real} />,
   },
   {
     ...commonProperties,
+    minWidth: 200,
     field: "fecha_termino",
     headerName: "Fecha termino real",
     renderCell: ({ row }) => <DateCell timestamp={row?.fecha_termino_real} />,
   },
   {
     ...commonProperties,
+    minWidth: 200,
     field: "fecha_solicitada",
     headerName: "Fecha de solicitud",
     renderCell: ({ row }) => <DateCell timestamp={row?.fecha_solicitada} />,

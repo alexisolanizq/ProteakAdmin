@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 
 const Navbar = ({ toggleSidebar }) => {
   return (
-    <nav className="fixed w-full z-10 top-0 py-2 px-6 bg-white flex items-center shadow-md shadow-black/5">
+    <nav className="w-full z-10 sticky top-0 py-2 px-6 bg-white flex items-center shadow-md shadow-black/5">
       <button onClick={toggleSidebar} className="text-lg text-gray-600">
         <i className="ri-menu-line" />
       </button>

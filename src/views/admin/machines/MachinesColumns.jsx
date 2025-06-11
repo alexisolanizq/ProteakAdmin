@@ -18,6 +18,11 @@ const MachinesColumns = ({ onEdit, details }) => [
     headerName: "Horómetro",
   },
   {
+    field: "state",
+    headerName: "Estatus",
+    type: "boolean",
+  },
+  {
     ...commonProperties,
     field: "actions",
     headerName: "Acciones",

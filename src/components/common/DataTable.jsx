@@ -7,15 +7,20 @@ const DataTable = ({
   data = [],
   columns = [],
   isLoading,
+  filter,
+  sorting,
   isRandomID = false,
   rowID = "id",
+  withMarginBottom = false,
   ...props
 }) => {
+  const classNameMB = withMarginBottom ? "mb-16" : "0";
   const { rowsFilter, generateRandom } = useDataGrid({ data });
 
   return (
-    <div className="min-h-96">
+    <div className={`w-full ${classNameMB}`}>
       <DataGrid
+        sx={{ border: "none" }}
         loading={isLoading}
         columns={columns}
         rows={rowsFilter}
@@ -28,11 +33,15 @@ const DataTable = ({
               page: 0,
             },
           },
+          filter: { filterModel: filter },
+          sorting,
+          columns: {columnVisibilityModel: {state: false}}
         }}
         pagination
         disableRowSelectionOnClick
-        disableColumnResize={false}
+        disableColumnResize
         // hideFooter
+        autoHeight
         showToolbar
         localeText={esES.components.MuiDataGrid.defaultProps.localeText}
         {...props}
@@ -42,10 +51,13 @@ const DataTable = ({
 };
 
 DataTable.propTypes = {
+  filter: PropTypes.object,
+  sorting: PropTypes.object,
   data: PropTypes.array,
   columns: PropTypes.array,
   isLoading: PropTypes.bool,
   isRandomID: PropTypes.bool,
+  withMarginBottom: PropTypes.bool,
   rowID: PropTypes.string || PropTypes.number,
 };
 

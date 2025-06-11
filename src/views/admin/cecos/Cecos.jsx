@@ -17,6 +17,7 @@ const Cecos = () => {
         columns={columns}
         isLoading={isLoading}
         sorting={sorting("idcentrocosto")}
+        withMarginBottom
       />
     </GeneralLayout>
   );

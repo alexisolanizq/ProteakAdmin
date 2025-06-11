@@ -1,12 +1,49 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getStorage } from "src/utils/storage";
 
 const useSidebar = () => {
-  const [openSidebar, setOpenSidebar] = useState(true);
+  const [collapsed, setCollapsed] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-  const toggleSidebar = () => setOpenSidebar(!openSidebar);
+  const toggleSidebar = () => {
+    setCollapsed(!collapsed)
+    setSidebarOpen(!sidebarOpen)
+  };
+
+  useEffect(() => {
+    const savedCollapsed = getStorage("sidebar-collapsed");
+    if (savedCollapsed !== null) {
+      setCollapsed(savedCollapsed === "true");
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!isMobile) {
+      localStorage.setItem("sidebar-collapsed", collapsed.toString());
+    }
+  }, [collapsed, isMobile]);
+
+    useEffect(() => {
+    const checkMobile = () => {
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+
+      if (mobile) {
+        setCollapsed(true);
+        setSidebarOpen(false);
+      }
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   return {
-    openSidebar,
+    isMobile,
+    collapsed,
+    sidebarOpen,
     toggleSidebar,
   };
 };

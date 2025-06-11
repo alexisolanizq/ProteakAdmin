@@ -78,6 +78,15 @@ export const sidebarList = [
   {
     id: 7,
     show: true,
+    name: "Hoja de vida",
+    icon: "ri-money-dollar-circle-line",
+    link: "/equipment-life-sheet",
+    submenu: [],
+    active: false,
+  },
+  {
+    id: 8,
+    show: true,
     name: "Alertas",
     icon: "ri-error-warning-line",
     link: "/",
