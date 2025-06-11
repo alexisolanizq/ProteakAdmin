@@ -18,7 +18,7 @@ const DataTable = ({
   const { rowsFilter, generateRandom } = useDataGrid({ data });
 
   return (
-    <div className={`w-full ${classNameMB}`}>
+    <div className={`w-full rounded-lg shadow-lg ${classNameMB}`}>
       <DataGrid
         sx={{ border: "none" }}
         loading={isLoading}

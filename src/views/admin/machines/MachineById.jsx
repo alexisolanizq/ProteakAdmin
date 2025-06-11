@@ -152,15 +152,13 @@ const MachineById = () => {
           </div>
         )}
 
-        <div className="bg-white rounded-lg shadow-lg">
-          <DataTable
-            label="Servicios"
-            isLoading={isLoadingServices}
-            data={services}
-            columns={columns}
-            withMarginBottom
-          />
-        </div>
+        <DataTable
+          label="Servicios"
+          isLoading={isLoadingServices}
+          data={services}
+          columns={columns}
+          withMarginBottom
+        />
       </GeneralLayout>
 
       {rowID && (
