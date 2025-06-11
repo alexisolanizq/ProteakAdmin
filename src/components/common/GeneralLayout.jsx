@@ -17,7 +17,7 @@ const GeneralLayout = ({
   return (
     <div
       className={`px-6 py-4 mx-auto h-dvh overflow-auto ${
-        isFullWidth ? "w-11/12" : "w-10/12"
+        isFullWidth ? "w-full md:w-11/12" : "w-full md:w-10/12"
       }`}
     >
       <div className="mb-6">
