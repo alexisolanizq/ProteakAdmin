@@ -5,6 +5,7 @@ const Modal = ({
   onClose,
   title = "",
   classNameBody = "",
+  isFullWidth = false,
   children,
 }) => {
   return (
@@ -13,11 +14,17 @@ const Modal = ({
         isShow ? "block" : "hidden"
       }`}
     >
-      <div className="fixed bg-white shadow-lg rounded-lg z-10 w-10/12 lg:w-1/3 mx-auto top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] overflow-hidden">
+      <div
+        className={`fixed bg-white shadow-lg rounded-lg z-10 ${
+          isFullWidth ? "w-10/12" : "w-[80%]"
+        } mx-auto top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] overflow-hidden`}
+      >
         <div className="flex items-center justify-between px-10 py-3 border-b-2">
-          <div className="text-xl font-semibold">{title}</div>
+          <div className="text-xl font-semibold">{title} <i className={`ri-close-large-line text-lg`} /></div>
         </div>
-        <div className={`${classNameBody} h-[550px] px-10 py-4 overflow-y-scroll`}>
+        <div
+          className={`${classNameBody} h-[550px] px-10 py-4 overflow-y-scroll`}
+        >
           {children}
         </div>
         <div className="flex">
@@ -43,8 +50,9 @@ Modal.propTypes = {
   isShow: PropTypes.bool,
   onClose: PropTypes.func,
   title: PropTypes.string,
-  classNameBody: PropTypes.string,
   children: PropTypes.any,
+  isFullWidth: PropTypes.bool,
+  classNameBody: PropTypes.string,
 };
 
 export default Modal;

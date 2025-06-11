@@ -9,12 +9,12 @@ const GeneralLayout = ({ children, title, resumen, isLoading = false }) => {
       </div>
     );
   return (
-    <div className="px-6 py-4 w-full bg-white">
+    <div className="px-6 py-4 w-full bg-white h-dvh overflow-auto">
       <div className="mb-6">
         <h2 className="font-semibold text-xl">{title}</h2>
         <p>{resumen}</p>
       </div>
-      <div className="w-full">{children}</div>
+      {children}
     </div>
   );
 };

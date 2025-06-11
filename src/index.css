@@ -56,3 +56,12 @@
 .MuiDataGrid-columnSeparator {
   display: none;
 }
+.MuiDataGrid-columnHeader, .MuiDataGrid-iconButtonContainer > button, .MuiDataGrid-menuIcon > button{
+  background: #1F263E!important;
+  color: #fff;
+}
+
+.MuiDataGrid-cell {
+  color: #333;
+  outline: none!important;
+}

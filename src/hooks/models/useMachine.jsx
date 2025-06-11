@@ -18,7 +18,7 @@ const useMachine = () => {
     setRow(null);
   };
 
-  const details = (id) => navigate(`/machine/${id}`);
+  const details = (id) => navigate(`${id}`);
 
   const columns = MachinesColumns({ onEdit, details });
 

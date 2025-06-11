@@ -20,6 +20,7 @@ const JobOrders = () => {
           columns={columns}
           isLoading={isLoading}
           sorting={sorting("fecha_solicitada", "desc")}
+          withMarginBottom
         />
       </GeneralLayout>
 

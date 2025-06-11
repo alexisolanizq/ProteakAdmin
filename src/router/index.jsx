@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "src/components/common/Layout";
 import Cecos from "src/views/admin/cecos/Cecos";
+import EquipmentLifeSheet from "src/views/admin/equipment-life-sheet/EquipmentLifeSheet";
 import Index from "src/views/admin/Index";
 import JobOrders from "src/views/admin/job-orders/JobOrders";
 import Machines from "src/views/admin/machines/Machine";
@@ -43,15 +44,15 @@ const routes = createBrowserRouter([
         path: "job-orders",
         element: <JobOrders />,
       },
-      {
-        path: "machines",
-        children: [
-          {
-            path: "",
-            element: <Machines />,
-          },
-        ],
-      },
+      // {
+      //   path: "machines",
+      //   children: [
+      //     {
+      //       path: "",
+      //       element: <Machines />,
+      //     },
+      //   ],
+      // },
       {
         path: "orders",
         children: [
@@ -67,15 +68,24 @@ const routes = createBrowserRouter([
       },
       {
         path: "machines",
-        element: <Machines />,
-      },
-      {
-        path: "machine/:id",
-        element: <MachineById />,
+        children: [
+          {
+            path: "",
+            element: <Machines />,
+          },
+          {
+            path: ":id",
+            element: <MachineById />,
+          },
+        ],
       },
       {
         path: "cecos",
         element: <Cecos />,
+      },
+      {
+        path: "equipment-life-sheet",
+        element: <EquipmentLifeSheet />,
       },
     ],
   },

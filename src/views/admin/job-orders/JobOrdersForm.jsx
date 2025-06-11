@@ -6,7 +6,7 @@ import SelectController from "src/components/form/SelectController";
 import TextAreaController from "src/components/form/TextAreaController";
 import { jobOrderTypes } from "src/constants/jobOrders";
 import { machines } from "src/constants/machines";
-import { confirmation } from "src/constants/options";
+import { CONFIRMATION } from "src/constants/options";
 import useJobOrderForm from "src/hooks/models/job-order/useJobOrderForm";
 
 const JobOrdersForm = ({
@@ -35,7 +35,7 @@ const JobOrdersForm = ({
         control={control}
         rules={[{ required: "Campo requerido" }]}
         label="Trabajo con detención de máquina"
-        options={confirmation}
+        options={CONFIRMATION}
         optionKey="displayName"
       />
       <DatePickerController
