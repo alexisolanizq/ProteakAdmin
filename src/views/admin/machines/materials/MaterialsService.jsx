@@ -11,6 +11,7 @@ const MaterialsService = ({ id, onEnd }) => {
   return (
     <div className="w-full">
       <DataTable
+        hideToolbar
         isRandomID
         data={materials}
         columns={columns}

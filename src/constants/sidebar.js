@@ -87,6 +87,15 @@ export const sidebarList = [
   {
     id: 8,
     show: true,
+    name: "Hojas de uso",
+    icon: "ri-file-history-line",
+    link: "/hoja-de-uso",
+    submenu: [],
+    active: false,
+  },
+  {
+    id: 9,
+    show: true,
     name: "Alertas",
     icon: "ri-error-warning-line",
     link: "/",

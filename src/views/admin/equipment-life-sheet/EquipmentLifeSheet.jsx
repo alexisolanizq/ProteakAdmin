@@ -11,6 +11,7 @@ const EquipmentLifeSheet = () => {
       resumen="Listado de hoja de vida de equipos"
     >
       <DataTable
+        label="Hoja de vida de equipos"
         rowID="idot"
         isLoading={isLoading}
         data={equipmentLifeSheets}

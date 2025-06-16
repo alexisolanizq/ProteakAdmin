@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Button from "src/components/common/Button";
 import useModal from "src/hooks/common/useModal";
 import { useJobOrderListService } from "src/services/jobOrder/jobOrderService";
 import { isValid } from "src/utils/values";
@@ -27,6 +28,12 @@ const useJobOrder = () => {
 
   const columns = JobOrdersColumns({ onEdit, onDetails });
 
+  const actions = [
+    <Button key={1} onClick={() => console.log("Agregando")}>
+      Nueva Orden
+    </Button>,
+  ];
+
   const jobOrderForm = () => (
     <JobOrdersForm
       isUpdate={isValid(row)}
@@ -38,6 +45,7 @@ const useJobOrder = () => {
 
   return {
     isOpen,
+    actions,
     columns,
     onCancel,
     jobOrders,

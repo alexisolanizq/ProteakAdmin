@@ -12,6 +12,7 @@ const Cecos = () => {
       resumen="Selecciona un item para ver sus detalles"
     >
       <DataTable
+        label="Centro de costos"
         rowID="idcentrocosto"
         data={cecos}
         columns={columns}

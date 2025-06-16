@@ -9,6 +9,7 @@ import Machines from "src/views/admin/machines/Machine";
 import MachineById from "src/views/admin/machines/MachineById";
 import Orders from "src/views/admin/orders";
 import Request from "src/views/admin/orders/request";
+import UsageSheets from "src/views/admin/usage-sheet/UsageSheets";
 import AuthLayout from "src/views/auth/AuthLayout";
 import Login from "src/views/auth/Login";
 import Register from "src/views/auth/Register";
@@ -83,6 +84,10 @@ const routes = createBrowserRouter([
       {
         path: "cecos",
         element: <Cecos />,
+      },
+      {
+        path: "hoja-de-uso",
+        element: <UsageSheets />,
       },
       {
         path: "hoja-de-vida-equipos",

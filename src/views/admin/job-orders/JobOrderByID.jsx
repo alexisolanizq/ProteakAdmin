@@ -3,9 +3,7 @@ import StatusCell from "src/components/common/StatusCell";
 import useJobOrderByID from "src/hooks/models/job-order/useJobOrderByID";
 
 const JobOrderByID = () => {
-  const { isLoading, otByID, isSuccess } = useJobOrderByID();
-
-  //   const header = JSON.parse(otByID?.[0].headerDatos)[0];
+  const { isLoading, otByID, isSuccess, header } = useJobOrderByID();
 
   return (
     <GeneralLayout
@@ -48,7 +46,7 @@ const JobOrderByID = () => {
             </div>
             <div>
               <span className="text-gray-500">Estado OT:</span>
-              <div className="ml-2 bg-blue-100 text-blue-700 font-semibold px-2 py-1 rounded inline-block">
+              <div className="ml-2 font-semibold inline-block">
                 {StatusCell(otByID?.[0].ot_estado_name)}
               </div>
             </div>
@@ -70,7 +68,7 @@ const JobOrderByID = () => {
                 {otByID?.[0].obs}
               </div>
             </div>
-            {/* <div>
+            <div>
               <span className="text-gray-500">Modelo:</span>
               <div className="font-semibold text-gray-800">
                 {header?.modelo_matri}
@@ -85,13 +83,16 @@ const JobOrderByID = () => {
             <div>
               <span className="text-gray-500">Serie:</span>
               <div className="font-semibold text-gray-800">
-                {header?.serie_matri.trim()}
+                {header?.serie_matri?.trim()}
               </div>
-            </div> */}
+            </div>
           </div>
 
           <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-200">
-            <button className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-md font-semibold transition">
+            <button
+              className="bg-green-400 hover:bg-green-500 text-white px-4 py-2 rounded-md font-semibold transition"
+              onClick={() => {}}
+            >
               Ver Orden
             </button>
             <button className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-semibold transition">

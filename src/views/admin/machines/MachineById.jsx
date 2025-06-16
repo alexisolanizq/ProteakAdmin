@@ -31,7 +31,7 @@ const MachineById = () => {
         isLoading={isLoading}
         title={`${machine?.[0].name}`}
         resumen="Se muestran los datos del equipo"
-        isFullWidth={false}
+        // isFullWidth={false}
       >
         {isSuccess && (
           <>

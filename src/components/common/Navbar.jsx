@@ -13,13 +13,11 @@ const Navbar = ({ toggleSidebar }) => {
       </button>
       <ul className="flex items-center text-sm ml-4">
         <li className="mr-2">
-          <button className="text-gray-400 hover:text-gray-600 font-semibold">
-            Inicio
-          </button>
+          <Link to={'/panel'} className="text-gray-400 hover:text-gray-600 font-semibold">
+            Panel
+          </Link>
         </li>
         {pathnames.map((value, index) => {
-          console.log(value);
-
           const to = "/" + pathnames.slice(0, index + 1).join("/");
           const isLast = index === pathnames.length - 1;
 

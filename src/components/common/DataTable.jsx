@@ -40,7 +40,6 @@ const DataTable = ({
         pagination
         disableRowSelectionOnClick
         disableColumnResize
-        // hideFooter
         autoHeight
         showToolbar
         localeText={esES.components.MuiDataGrid.defaultProps.localeText}

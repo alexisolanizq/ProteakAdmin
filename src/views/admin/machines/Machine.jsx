@@ -12,10 +12,11 @@ const Machine = () => {
       resumen="Selecciona una máquina para configurar"
     >
       <DataTable
+        label="Equipos"
         isLoading={isLoading}
         columns={columns}
         data={machines}
-        filter={filterStatus('state')}
+        filter={filterStatus("state")}
         withMarginBottom
       />
     </GeneralLayout>

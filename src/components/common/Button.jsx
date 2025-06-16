@@ -22,9 +22,9 @@ const Button = ({
     if (isSubmit)
       return "bg-primary-600 text-white hover:ring-primary-100 hover:ring-2 hover:shadow-lg";
     if (isPlainText)
-      return "bg-none border-none shadow-none"
+      return "bg-none border-none shadow-none hover:bg-gray-200"
 
-    return "bg-primary-600 text-white hover:shadow-lg";
+    return "bg-primary-300 text-white hover:shadow-lg";
   }, [isBorderPrimary, isCancel, isSubmit, isPlainText]);
 
   const classNameType = getClassName();

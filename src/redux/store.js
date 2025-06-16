@@ -3,6 +3,7 @@ import cecoReducer from "src/redux/cecoSlice";
 import machineReducer from "src/redux/machineSlice";
 import jobOrdersReducer from "src/redux/jobOrderSlice";
 import equipmentLifeSheetReducer from "src/redux/equipmentLifeSheetSlice";
+import usageSheetsReducer from "src/redux/usageSheetSlice";
 
 const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
     jobOrders: jobOrdersReducer,
     cecos: cecoReducer,
     equipmentLifeSheets: equipmentLifeSheetReducer,
+    usageSheets: usageSheetsReducer,
   },
 });
 

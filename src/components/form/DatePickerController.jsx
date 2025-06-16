@@ -7,7 +7,7 @@ const DatePickerController = ({
   label,
   rules,
   control,
-  onChange,
+  onChange = () => {},
   className = "mb-4",
   defaultValues,
 }) => {
@@ -26,8 +26,8 @@ const DatePickerController = ({
           label={label}
           className={className}
           onChange={(event) => {
-            onChange(event.target.value);
-            onChangeField(event.target.value);
+            onChange(event);
+            onChangeField(event);
           }}
           onBlur={onBlur}
           value={value}

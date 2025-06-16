@@ -5,6 +5,7 @@ const MaterialsServiceColumns = () => [
     ...commonProperties,
     field: "idmaquinaservicio_materiales",
     headerName: "Item",
+    minWidth: 100,
   },
   {
     ...commonProperties,
@@ -16,11 +17,13 @@ const MaterialsServiceColumns = () => [
     ...commonProperties,
     field: "code",
     headerName: "Código",
+    minWidth: 180,
   },
   {
     ...commonProperties,
     field: "cantidad",
     headerName: "Cantidad",
+    minWidth: 180,
   },
 ];
 

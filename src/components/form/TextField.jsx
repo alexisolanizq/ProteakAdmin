@@ -18,7 +18,7 @@ const TextField = ({
       <input
         id={id}
         type={type}
-        className={`bg-gray-100 outline-none rounded-md placeholder:text-slate-400 text-slate-700 text-sm font-semibold pl-3 pr-8 py-3 appearance-none w-full hover:ring-gray-200 hover:ring-2 ${inputClassName}`}
+        className={`bg-gray-100 ring-gray-200 ring-2 outline-none rounded-md placeholder:text-slate-400 text-slate-700 text-sm font-semibold pl-3 pr-8 py-3 appearance-none w-full ${inputClassName}`}
         {...props}
       />
       {error && <p className="text-red-500 text-sm">{helperText}</p>}

@@ -5,16 +5,25 @@ import useJobOrder from "src/hooks/models/job-order/useJobOrder";
 import { sorting } from "src/utils/sorting";
 
 const JobOrders = () => {
-  const { isLoading, jobOrders, isOpen, onCancel, jobOrderForm, columns } =
-    useJobOrder();
+  const {
+    isLoading,
+    jobOrders,
+    isOpen,
+    onCancel,
+    jobOrderForm,
+    columns,
+    actions,
+  } = useJobOrder();
 
   return (
     <>
       <GeneralLayout
         title="Ordenes de trabajo"
         resumen="Listado de ordenes de trabajo. Selecciona para ver detalles"
+        actions={actions}
       >
         <DataTable
+          label="Ordenes de trabajo"
           rowID="idot"
           data={jobOrders}
           columns={columns}
