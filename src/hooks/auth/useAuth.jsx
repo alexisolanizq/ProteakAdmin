@@ -1,11 +1,13 @@
 import { useForm } from "react-hook-form";
 import { useLocation, useNavigate } from "react-router-dom";
+import { STORAGE_AUTH } from "src/constants/storage";
 import {
   useLoginService,
   useRegisterService,
 } from "src/services/auth/authService";
 import { isValidAuth } from "src/utils/auth";
 import { hashPassword } from "src/utils/sorting";
+import { removeStorage } from "src/utils/storage";
 
 const useAuth = () => {
   const {
@@ -45,12 +47,18 @@ const useAuth = () => {
     }
   };
 
+  const onRestart = () => {
+    removeStorage(STORAGE_AUTH);
+    navigate('/auth/login')
+  };
+
   const isLoadingMutation = loginMutation.isLoading;
 
   return {
     errors,
-    control,
     onAuth,
+    control,
+    onRestart,
     handleSubmit,
     isLoadingMutation,
   };
