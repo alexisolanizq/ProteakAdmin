@@ -2,7 +2,7 @@ import Button from "src/components/common/Button";
 import { commonProperties } from "src/components/common/DataTable";
 import DateCell from "src/components/common/DateCell";
 
-const UsageSheetColumns = () => [
+const UsageSheetColumns = ({ onDetails }) => [
   {
     ...commonProperties,
     field: "nrohojauso",
@@ -25,25 +25,25 @@ const UsageSheetColumns = () => [
     ...commonProperties,
     field: "medicionHr",
     headerName: "Horómetro",
-    minWidth: 300,
+    minWidth: 250,
   },
   {
     ...commonProperties,
     field: "medicionHrAnt",
     headerName: "Horómetro Anterior",
-    minWidth: 300,
+    minWidth: 250,
   },
   {
     ...commonProperties,
     field: "medicionKm",
     headerName: "Kilometraje",
-    minWidth: 300,
+    minWidth: 250,
   },
   {
     ...commonProperties,
     field: "medicionKmAnt",
     headerName: "Kilometraje Anterior",
-    minWidth: 300,
+    minWidth: 250,
   },
   {
     ...commonProperties,
@@ -59,11 +59,7 @@ const UsageSheetColumns = () => [
     minWidth: 190,
     type: "actions",
     getActions: ({ row }) => [
-      <Button
-        key={row}
-        icon="ri-eye-line"
-        onClick={() => console.log(row)}
-      />,
+      <Button key={row} icon="ri-eye-line" onClick={() => onDetails(row)} />,
     ],
   },
 ];

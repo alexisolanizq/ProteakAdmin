@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
-import Button from "./Button";
+import Button from "src/components/common/Button";
+import ButtonsForm from "src/components/common/ButtonsForm";
 
 const Modal = ({
   isShow = false,
@@ -16,9 +17,9 @@ const Modal = ({
       }`}
     >
       <div
-        className={`fixed bg-white shadow-lg rounded-lg z-10 ${
+        className={`fixed bg-white shadow-lg rounded-lg max-h-[576px] z-10 ${
           isFullWidth ? "w-10/12" : "w-[80%]"
-        } mx-auto top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] overflow-hidden`}
+        } mx-auto top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] overflow-hidden flex flex-col`}
       >
         <div className="flex items-center justify-between px-10 py-3 border-b-2">
           <div className="text-xl font-semibold">{title}</div>
@@ -26,25 +27,14 @@ const Modal = ({
             <i className="ri-close-line text-xl" />
           </Button>
         </div>
-        <div
-          className={`min-w-96 px-6 py-4 overflow-y-scroll ${classNameBody}`}
-        >
+
+        <div className={`p-4 overflow-auto flex-1 ${classNameBody}`}>
           {children}
         </div>
-        {/* <div className="flex">
-          <button
-            onClick={onClose}
-            className="flex-1 py-3 font-semibold bg-gray-400 text-white"
-          >
-            Cerrar
-          </button>
-          <button
-            onClick={() => {}}
-            className="flex-1 py-3 font-semibold bg-primary-100 text-white"
-          >
-            Guardar
-          </button>
-        </div> */}
+
+        <div className="justify-end w-full bg-white border-t-2">
+          <ButtonsForm withBigPadding onCancel={onClose} />
+        </div>
       </div>
     </div>
   );

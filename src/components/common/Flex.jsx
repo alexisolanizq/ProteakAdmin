@@ -14,7 +14,7 @@ const Flex = ({
   };
 
   const classWrap = isWrap ? "flex-wrap" : "";
-  const classOrientation = isVertical ? "flex-col" : "flex-row";
+  const classOrientation = isVertical ? "flex-col" : "flex-col md:flex-row";
 
   return (
     <div

@@ -13,6 +13,7 @@ const Button = ({
   isLoading = false,
   onClick = () => {},
   isBorderPrimary = false,
+  withBigPadding = false,
 }) => {
   const getClassName = useCallback(() => {
     if (isBorderPrimary)
@@ -31,12 +32,13 @@ const Button = ({
   const classLoading = isLoading && "loading";
   const typeButton = isSubmit ? "submit" : type;
   const alignEnd = isEnd && "ml-auto";
+  const padding = withBigPadding ? "px-6 py-3" : 'px-6 py-1.5'
 
   return (
     <button
       onClick={onClick}
       type={typeButton}
-      className={`block rounded-md px-6 py-1.5 font-semibold ${classNameType} ${alignEnd} ${classLoading}`}
+      className={`block rounded-md ${padding} font-semibold ${classNameType} ${alignEnd} ${classLoading}`}
     >
       {icon && <i className={`${icon} ${iconClass}`} />}
       {children}
@@ -55,6 +57,7 @@ Button.propTypes = {
   isLoading: PropTypes.bool,
   isPlainText: PropTypes.bool,
   iconClass: PropTypes.string,
+  withBigPadding: PropTypes.bool,
   isBorderPrimary: PropTypes.bool,
 };
 

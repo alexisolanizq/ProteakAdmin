@@ -1,17 +1,19 @@
+import { Skeleton } from "@mui/material";
 import PropTypes from "prop-types";
 import { Controller } from "react-hook-form";
 import TextField from "src/components/form/TextField";
 
 const TextFieldController = ({
+  rules,
+  control,
   name = "",
   label = "",
-  control,
-  rules,
-  defaultValues,
-  className = "mb-4",
-  onEnterChange = () => {},
-  onChange = () => {},
+  defaultValue,
   isLoading = false,
+  className = "mb-4",
+  isDisabled = false,
+  onChange = () => {},
+  onEnterChange = () => {},
   ...props
 }) => {
   return (
@@ -19,7 +21,7 @@ const TextFieldController = ({
       name={name}
       control={control}
       rules={rules}
-      defaultValue={defaultValues}
+      defaultValue={defaultValue}
       render={({
         field: { onChange: onChangeField, value, onBlur },
         fieldState: { error },
@@ -27,26 +29,27 @@ const TextFieldController = ({
         <>
           <TextField
             id={name}
-            className={className}
-            label={label}
             name={name}
+            label={label}
+            error={!!error}
+            onBlur={onBlur}
+            helperText={error}
+            value={value ?? ""}
+            className={className}
+            isDisabled={isDisabled}
             onKeyDown={(event) => {
               if (event.key === "Enter") {
                 event.preventDefault();
                 onEnterChange(event.target.value);
               }
             }}
-            onBlur={onBlur}
             onChange={(event) => {
               onChangeField(event.target.value);
               onChange(event.target.value);
             }}
-            value={value ?? ""}
-            error={!!error}
-            helperText={error}
             {...props}
           />
-          {isLoading && <p>Cargando</p>}
+          {isLoading && <Skeleton variant="rounded" width={210} height={30} />}
         </>
       )}
     />
@@ -56,13 +59,14 @@ const TextFieldController = ({
 TextFieldController.propTypes = {
   control: PropTypes.any,
   name: PropTypes.string,
-  rules: PropTypes.array,
+  rules: PropTypes.object,
   label: PropTypes.string,
   onChange: PropTypes.func,
   isLoading: PropTypes.bool,
+  isDisabled: PropTypes.bool,
   className: PropTypes.string,
   onEnterChange: PropTypes.func,
-  defaultValues: PropTypes.object,
+  defaultValue: PropTypes.object,
   inputClassName: PropTypes.string,
 };
 
