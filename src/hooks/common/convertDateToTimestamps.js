@@ -1,34 +1,23 @@
-export const getUTCMidnightTimestamp = (dateString) => {
-  const date = new Date(dateString);
-  const utcDate = new Date(
-    Date.UTC(date.getFullYear(), date.getMonth(), date.getDate())
-  );
-  return Math.floor(utcDate.getTime() / 1000);
-};
+export const convertDatesToTimestamps = ({
+  startDate = null,
+  endDate = null,
+  singleDate = null,
+} = {}) => {
+  const toSeconds = (dateStr) => Math.floor(new Date(dateStr).getTime() / 1000);
 
-export const convertDatesToTimestamps = (startDate, endDate) => {
-  const customStartDate = new Date("01/01/2022");
+  if (singleDate) {
+    return { date: toSeconds(singleDate) };
+  }
 
-  const getCustomStartDate = getUTCMidnightTimestamp(customStartDate);
+  if (startDate && endDate) {
+    return { start: toSeconds(startDate), end: toSeconds(endDate) };
+  }
 
   const now = new Date();
+  const firstDayOfMonth = new Date(now.getFullYear(), now.getMonth(), 1);
 
-  // Primer día del mes actual (UTC)
-  const defaultStartDate = new Date(
-    Date.UTC(now.getFullYear(), now.getMonth(), 1)
-  );
-  // Hoy (UTC)
-  const defaultEndDate = new Date(
-    Date.UTC(now.getFullYear(), now.getMonth(), now.getDate())
-  );
-
-  const startTimestamp = getUTCMidnightTimestamp(
-    startDate || defaultStartDate.toISOString().split("T")[0]
-  );
-
-  const endTimestamp = getUTCMidnightTimestamp(
-    endDate || defaultEndDate.toISOString().split("T")[0]
-  );
-
-  return { startTimestamp: getCustomStartDate, endTimestamp };
+  return {
+    today: Math.floor(now.getTime() / 1000),
+    firstDayOfMonth: Math.floor(firstDayOfMonth.getTime() / 1000),
+  };
 };

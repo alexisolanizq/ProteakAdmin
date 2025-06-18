@@ -1,10 +1,6 @@
 import { STATUS_CLASS } from "src/constants/options";
 
-export const getStatusStyle = ({
-  otStatus,
-  operativeStatus,
-  detentitonStatus,
-}) => {
+export const getStatusStyle = (status) => {
   const toLower = status.toLowerCase();
 
   return (

@@ -19,7 +19,7 @@ const Modal = ({
       <div
         className={`fixed bg-white shadow-lg rounded-lg max-h-[576px] z-10 ${
           isFullWidth ? "w-10/12" : "w-[80%]"
-        } mx-auto top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] overflow-hidden flex flex-col`}
+        } mx-auto top-[54%] left-[50%] -translate-x-[50%] -translate-y-[50%] overflow-hidden flex flex-col`}
       >
         <div className="flex items-center justify-between px-10 py-3 border-b-2">
           <div className="text-xl font-semibold">{title}</div>

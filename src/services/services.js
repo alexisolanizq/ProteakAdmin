@@ -3,8 +3,9 @@ import { useGET, usePOST } from "src/utils/api";
 import { isValid } from "src/utils/values";
 
 export const useListService = ({
-  store,
   url,
+  store,
+  enable,
   onSaveList,
   listName = "list",
   onSuccess = () => {},
@@ -13,9 +14,12 @@ export const useListService = ({
   const dispatch = useDispatch();
   const list = useSelector((state) => state[store]?.[listName]);
 
+  const shouldEnable =
+    typeof enable === "boolean" ? enable : !isValid(list) || list.length === 0;
+
   const { isFetching } = useGET({
     url,
-    enable: !isValid(list) || list.length === 0,
+    enable: shouldEnable,
     onSuccess: (response) => {
       dispatch(onSaveList(response));
       onSuccess(response);

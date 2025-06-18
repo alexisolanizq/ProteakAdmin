@@ -1,6 +1,7 @@
 import Button from "src/components/common/Button";
 import { commonProperties } from "src/components/common/DataTable";
 import DateCell from "src/components/common/DateCell";
+import StatusCell from "src/components/common/StatusCell";
 
 const JobOrdersColumns = ({ onEdit, onDetails }) => [
   {
@@ -14,6 +15,7 @@ const JobOrdersColumns = ({ onEdit, onDetails }) => [
     minWidth: 100,
     field: "ot_estado_name",
     headerName: "Estado ODT",
+    renderCell: ({ row }) => StatusCell(row?.ot_estado_name),
   },
   {
     ...commonProperties,
@@ -75,7 +77,11 @@ const JobOrdersColumns = ({ onEdit, onDetails }) => [
     type: "actions",
     getActions: ({ row }) => [
       <Button key={row} icon="ri-pencil-line" onClick={() => onEdit(row)} />,
-      <Button key={row} icon="ri-eye-line" onClick={() => onDetails(row?.idot)} />,
+      <Button
+        key={row}
+        icon="ri-eye-line"
+        onClick={() => onDetails(row?.idot)}
+      />,
     ],
   },
 ];

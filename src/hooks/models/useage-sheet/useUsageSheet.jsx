@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { convertDatesToTimestamps } from "src/hooks/common/convertDateToTimestamps";
 import useModal from "src/hooks/common/useModal";
 import { useUsageSheetService } from "src/services/usage-sheet/usageSheetService";
@@ -14,11 +14,13 @@ const useUsageSheet = () => {
     isLoading: isLoadingModal,
     openModal,
   } = useModal();
-  const { startTimestamp, endTimestamp } = convertDatesToTimestamps();
+  const { today, firstDayOfMonth } = useMemo(() => {
+    return convertDatesToTimestamps();
+  }, []);
 
   const { data: usageSheets, isLoading } = useUsageSheetService({
-    timestamp_start: startTimestamp,
-    timestamp_end: endTimestamp,
+    timestamp_start: firstDayOfMonth,
+    timestamp_end: today,
   });
 
   const onDetails = (row) => {
