@@ -11,7 +11,6 @@ const useUsageSheet = () => {
   const {
     closeModal,
     isOpen,
-    isLoading: isLoadingModal,
     openModal,
   } = useModal();
   const { today, firstDayOfMonth } = useMemo(() => {
@@ -52,7 +51,6 @@ const useUsageSheet = () => {
     isLoading,
     closeModal,
     usageSheets,
-    isLoadingModal,
     usageSheetForm,
   };
 };

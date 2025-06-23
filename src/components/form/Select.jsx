@@ -21,13 +21,13 @@ const Select = ({
       </label>
       <div className="relative">
         <select
-          {...props}
           id={name}
           className="bg-gray-100 outline-none rounded-md placeholder:text-slate-400 text-slate-700 text-sm font-semibold pl-3 pr-8 py-3 appearance-none cursor-pointer w-full hover:ring-gray-200 hover:ring-2"
+          // value={value}
+          // onChange={onChange}
+          {...props}
         >
-          <option value={null} defaultValue="selected">
-            {placeholder}
-          </option>
+          <option value={null}>{placeholder}</option>
           {options.map((option, index) => (
             <option key={option[valueKey] || index} value={option[valueKey]}>
               {" "}
@@ -56,6 +56,7 @@ const Select = ({
 };
 
 Select.propTypes = {
+  value: PropTypes.any,
   name: PropTypes.string,
   error: PropTypes.string,
   label: PropTypes.string,

@@ -15,8 +15,11 @@ const Modal = ({
       className={`fixed w-full h-dvh top-0 left-0 bg-black/40 ${
         isShow ? "block" : "hidden"
       }`}
+      onClick={onClose}
     >
-      <div
+      <dialog
+        aria-modal="true"
+        aria-labelledby="modal-title"
         className={`fixed bg-white shadow-lg rounded-lg max-h-[576px] z-10 ${
           isFullWidth ? "w-10/12" : "w-[80%]"
         } mx-auto top-[54%] left-[50%] -translate-x-[50%] -translate-y-[50%] overflow-hidden flex flex-col`}
@@ -35,7 +38,7 @@ const Modal = ({
         <div className="justify-end w-full bg-white border-t-2">
           <ButtonsForm withBigPadding onCancel={onClose} />
         </div>
-      </div>
+      </dialog>
     </div>
   );
 };

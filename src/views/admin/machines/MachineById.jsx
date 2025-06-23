@@ -8,17 +8,21 @@ import { formatDate } from "src/utils/dates";
 
 const MachineById = () => {
   const {
-    isLoading,
-    machine,
-    isSuccess,
     cecos,
-    services,
-    isLoadingServices,
+    owner,
+    rowID,
+    opState,
     columns,
-    materialServiceComponent,
+    machine,
+    services,
+    isLoading,
+    isSuccess,
+    movementZone,
+    isLoadingServices,
     closeMaterialModal,
     isOpenMaterialsModal,
-    rowID,
+    materialServiceComponent,
+    riskRating,
   } = useMachineByID();
 
   const ceco = cecos.find(
@@ -42,7 +46,7 @@ const MachineById = () => {
                   Identificación
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {renderDato("ID Matriculación", machine?.[0].idmatri)}
+                  {/* {renderDato("ID Matriculación", machine?.[0].idmatri)} */}
                   {renderDato("Centro de Costo", ceco?.code)}
                   {renderDato("Serie", machine?.[0].serie)}
                 </div>
@@ -149,22 +153,12 @@ const MachineById = () => {
                   Otros Datos
                 </h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {renderDato(
-                    "Estado Operativo",
-                    machine?.[0].idestadooperativo
-                  )}
-                  {renderDato(
-                    "Estado de Traslado",
-                    machine?.[0].traslado_state
-                  )}
-                  {renderDato("Zona", machine?.[0].idzona)}
+                  {renderDato("Estado Operativo", opState?.estadooperativo)}
+                  {renderDato("Zona", movementZone?.zona_final)}
                   {renderDato("Taller", machine?.[0].taller ?? "—")}
                   {renderDato("Fabricante", machine?.[0].idfabricante)}
-                  {renderDato("Propietario", machine?.[0].idpropietario)}
-                  {renderDato(
-                    "Clasificación Riesgo",
-                    machine?.[0].idclasificacionriesgo
-                  )}
+                  {renderDato("Propietario", owner?.name)}
+                  {renderDato("Clasificación Riesgo", riskRating?.name, 'risk-')}
                   {renderDato("Categoría", machine?.[0].idcategoriamaquina)}
                   {renderDato(
                     "Subcategoría",

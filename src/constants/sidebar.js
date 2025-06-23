@@ -96,6 +96,15 @@ export const sidebarList = [
   {
     id: 9,
     show: true,
+    name: "Estado diario",
+    icon: "ri-flag-line",
+    link: "/estado-diario",
+    submenu: [],
+    active: false,
+  },
+  {
+    id: 10,
+    show: true,
     name: "Alertas",
     icon: "ri-error-warning-line",
     link: "/",

@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "src/components/common/Layout";
 import Cecos from "src/views/admin/cecos/Cecos";
+import DailyStatus from "src/views/admin/daily-status/DailyStatus";
 import EquipmentLifeSheet from "src/views/admin/equipment-life-sheet/EquipmentLifeSheet";
 import Index from "src/views/admin/Index";
 import JobOrderByID from "src/views/admin/job-orders/JobOrderByID";
@@ -92,6 +93,10 @@ const routes = createBrowserRouter([
       {
         path: "hoja-de-vida-equipos",
         element: <EquipmentLifeSheet />,
+      },
+      {
+        path: "estado-diario",
+        element: <DailyStatus />,
       },
     ],
   },

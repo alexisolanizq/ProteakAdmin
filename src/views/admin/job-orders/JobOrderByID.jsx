@@ -1,9 +1,11 @@
 import GeneralLayout from "src/components/common/GeneralLayout";
 import StatusCell from "src/components/common/StatusCell";
+import PDFPreview from "src/components/form/PDFPreview";
 import useJobOrderByID from "src/hooks/models/job-order/useJobOrderByID";
 
 const JobOrderByID = () => {
-  const { isLoading, otByID, isSuccess, header } = useJobOrderByID();
+  const { isLoading, otByID, isSuccess, header, formData, getPDF } =
+    useJobOrderByID();
 
   return (
     <GeneralLayout
@@ -91,7 +93,7 @@ const JobOrderByID = () => {
           <div className="flex flex-wrap gap-3 pt-4 border-t border-gray-200">
             <button
               className="bg-green-400 hover:bg-green-500 text-white px-4 py-2 rounded-md font-semibold transition"
-              onClick={() => {}}
+              onClick={getPDF}
             >
               Ver Orden
             </button>
@@ -105,6 +107,8 @@ const JobOrderByID = () => {
               Detalle Materiales
             </button>
           </div>
+
+          <div className="my-10">{formData && <PDFPreview />}</div>
         </div>
       )}
     </GeneralLayout>

@@ -6,13 +6,13 @@ import StatusCell from "src/components/common/StatusCell";
 const JobOrdersColumns = ({ onEdit, onDetails }) => [
   {
     ...commonProperties,
-    minWidth: 100,
+    minWidth: 180,
     field: "folio",
     headerName: "Folio",
   },
   {
     ...commonProperties,
-    minWidth: 100,
+    minWidth: 180,
     field: "ot_estado_name",
     headerName: "Estado ODT",
     renderCell: ({ row }) => StatusCell(row?.ot_estado_name),
@@ -25,13 +25,13 @@ const JobOrdersColumns = ({ onEdit, onDetails }) => [
   },
   {
     ...commonProperties,
-    minWidth: 280,
+    minWidth: 340,
     field: "asociado_a",
     headerName: "Asociado",
   },
   {
     ...commonProperties,
-    minWidth: 300,
+    minWidth: 390,
     field: "taller",
     headerName: "Taller",
   },
