@@ -1,0 +1,831 @@
+{
+  "name": "Alexis",
+  "lastname": "Olan",
+  "email": "Alexis.olan@proteak.com",
+  "rut": "999999-99",
+  "idrol": 3,
+  "namerol": "Usuario",
+  "uid": 1490,
+  "codemp": 6,
+  "menu": [
+    {
+      "name": "Bodega",
+      "title": "Bodega",
+      "enlace": "",
+      "icon": "archive",
+      "submenu": [
+        {
+          "name": "Recepción Repuestos/Materiales",
+          "enlace": "RepeciónMateriales",
+          "icon": "times"
+        },
+        {
+          "name": "Ajustes de stock",
+          "enlace": "AjusteStock",
+          "icon": "times"
+        },
+        {
+          "name": "Solicitud Compra",
+          "enlace": "SolicitudCompra",
+          "icon": "times"
+        },
+        {
+          "name": "Revisión de Solicitud Compra",
+          "enlace": "RevisionSolicitudCompra",
+          "icon": "times"
+        },
+        {
+          "name": "Autorización de Solicitud Compra",
+          "enlace": "AutorizacionSolicitudCompra",
+          "icon": "times"
+        },
+        { "name": "Orden de Compra", "enlace": "OrdenCompra", "icon": "times" },
+        {
+          "name": "Solicitud Materiales",
+          "enlace": "SolicitudMaterial",
+          "icon": "times"
+        },
+        {
+          "name": "Revisión de Solicitud Materiales",
+          "enlace": "RevisionSolicitudMaterial",
+          "icon": "times"
+        },
+        {
+          "name": "Autorización de Solicitud Materiales",
+          "enlace": "AutorizacionSolicitudMaterial",
+          "icon": "times"
+        },
+        {
+          "name": "Despacho Materiales",
+          "enlace": "DespachoMateriales",
+          "icon": "times"
+        },
+        {
+          "name": "Carga Stock Materiales",
+          "enlace": "CargaStock",
+          "icon": "times"
+        }
+      ]
+    },
+    {
+      "name": "Planificación",
+      "title": "Planificación",
+      "enlace": "",
+      "icon": "calendar",
+      "submenu": [
+        { "name": "Entrega de EPP", "enlace": "EntregaEPP", "icon": "times" },
+        {
+          "name": "Registro de charlas",
+          "enlace": "RegistroCharlas",
+          "icon": "times"
+        },
+        {
+          "name": "Evaluación de cumplimiento",
+          "enlace": "EvaluaCumplimientoPlanificacionMaquinaServicio",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Carta Gantt Maquina",
+          "enlace": "MaquinaGantt",
+          "icon": "shedule",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Carta Gantt Componentes",
+          "enlace": "ComponenteGantt",
+          "icon": "shedule",
+          "selected": true,
+          "userselected": true
+        }
+      ],
+      "selected": true,
+      "userselected": true
+    },
+    {
+      "name": "Alertas",
+      "title": "Alertas",
+      "enlace": "",
+      "icon": "warning",
+      "submenu": [
+        {
+          "name": "Dashboard",
+          "enlace": "DashboardAlertas",
+          "icon": "warning",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Alertas Maquinas",
+          "enlace": "AlertaMaquinas",
+          "icon": "warning",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Alertas Componentes",
+          "enlace": "AlertaComponentes",
+          "icon": "warning",
+          "selected": true,
+          "userselected": true
+        }
+      ],
+      "selected": true,
+      "userselected": true
+    },
+    {
+      "name": "Operaciones",
+      "title": "Operaciones",
+      "enlace": "",
+      "icon": "calendar",
+      "submenu": [
+        {
+          "name": "REGISTRO HOROMETROS",
+          "enlace": "hojaUso",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Registro tiempos muertos",
+          "enlace": "RegistroTiemposMuertos",
+          "icon": "times"
+        },
+        {
+          "name": "Detenciones",
+          "enlace": "Detenciones",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Estado Operativo",
+          "enlace": "EstadoOperativo",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Traslado de Maquina",
+          "enlace": "MovimientoEquipo",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Movimiento de Componente",
+          "enlace": "MovimientoComponente",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Carga Excel Hoja de Uso",
+          "enlace": "CargaHojaUso",
+          "icon": "times"
+        }
+      ],
+      "selected": true,
+      "userselected": true
+    },
+    {
+      "name": "Producción",
+      "title": "Produccion",
+      "enlace": "",
+      "icon": "wrench",
+      "submenu": [
+        {
+          "name": "Orden de trabajo",
+          "enlace": "OT",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Generación de eventos",
+          "enlace": "Eventos",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Notificaciones",
+          "enlace": "Notificaciones",
+          "icon": "times",
+          "selected": true
+        }
+      ],
+      "selected": true,
+      "userselected": true
+    },
+    {
+      "name": "Handling",
+      "title": "Handling",
+      "enlace": "",
+      "icon": "wrench",
+      "submenu": [
+        {
+          "name": "Planificación",
+          "enlace": "PlanificacionDiariaHandling",
+          "icon": "times"
+        },
+        {
+          "name": "Ejecución Servicios",
+          "enlace": "EjecucionHandling",
+          "icon": "times"
+        },
+        {
+          "name": "Informe facturación Handling",
+          "enlace": "InformeFacturacionHandling",
+          "icon": "times"
+        }
+      ]
+    },
+    {
+      "name": "Mantenimiento Predictivo",
+      "title": "Mantenimiento Predictivo",
+      "enlace": "",
+      "icon": "line-chart",
+      "submenu": [
+        {
+          "name": "Solicitud de análisis de Muestra",
+          "enlace": "AnalisisDeMuestra",
+          "icon": "times",
+          "selected": true
+        },
+        {
+          "name": "Graficos de análisis de Muestra",
+          "enlace": "GraficosAnalisisMuestra",
+          "icon": "times",
+          "selected": true
+        }
+      ],
+      "selected": true
+    },
+    {
+      "name": "Informes",
+      "title": "Informes",
+      "enlace": "",
+      "icon": "line-chart",
+      "submenu": [
+        {
+          "name": "Hoja de vida Maquina",
+          "enlace": "HojaVidaMatri",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Hoja de vida componente",
+          "enlace": "HojaVidaComponentes",
+          "icon": "times",
+          "selected": true
+        },
+        {
+          "name": "Consolidado OT",
+          "enlace": "ConsolidadoOT",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Estado de Intervenciones",
+          "enlace": "InformeEstadoIntervenciones",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Seguimiento y Cumplimiento de trabajos",
+          "enlace": "InformeSeguimientoCumplimiento",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Evaluación Mecánicos",
+          "enlace": "InformeEvaluacionMecanico",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Evaluación Talleres",
+          "enlace": "InformeEvaluacionTaller",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Estado diario",
+          "enlace": "EstadoDiario",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Análisis de Fallas",
+          "enlace": "InformeAnalisisFallas",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Confiabilidad",
+          "enlace": "Confiabilidad",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Componentes",
+          "enlace": "InformeComponentes",
+          "icon": "times"
+        },
+        {
+          "name": "Informe de Disponibilidad",
+          "enlace": "InformeDisponibilidad",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Servicios Maquina",
+          "enlace": "InformeServiciosMatricula",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Servicios Componente",
+          "enlace": "InformeServiciosComponente",
+          "icon": "times",
+          "selected": true
+        },
+        {
+          "name": "Plan de reemplazo",
+          "enlace": "InformePlanDeReemplazo",
+          "icon": "times",
+          "selected": true
+        },
+        {
+          "name": "Componentes Instalados en Equipos",
+          "enlace": "InformeComponentesInstalados",
+          "icon": "times"
+        },
+        {
+          "name": "Estadística de Operaciones",
+          "enlace": "GraficoHojauso",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Detenciones",
+          "enlace": "InformeDetenciones",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "StockMateriales",
+          "enlace": "StockMateriales",
+          "icon": "times",
+          "selected": true
+        },
+        {
+          "name": "Gráfico Niveles",
+          "enlace": "graficoNiveles",
+          "icon": "times"
+        },
+        {
+          "name": "Movimientos entre bodegas",
+          "enlace": "MovimientosBodega",
+          "icon": "times"
+        },
+        {
+          "name": "Dashboard",
+          "enlace": "dashboardInicial",
+          "icon": "times",
+          "selected": true
+        }
+      ],
+      "selected": true,
+      "userselected": true
+    }
+  ],
+  "mantenedores": [
+    {
+      "name": "General",
+      "title": "General",
+      "enlace": "",
+      "icon": "cogs",
+      "submenu": [
+        { "name": "Moneda", "enlace": "moneda", "icon": "users" },
+        {
+          "name": "Fabricante",
+          "enlace": "Fabricante",
+          "icon": "users",
+          "selected": true
+        },
+        {
+          "name": "Usuarios",
+          "enlace": "Usuarios",
+          "icon": "users",
+          "selected": true
+        },
+        {
+          "name": "Centros de Costo",
+          "enlace": "CentroCosto",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Bodegas y Ubicaciones",
+          "enlace": "Bodega",
+          "icon": "times"
+        },
+        { "name": "Proveedores", "enlace": "Proveedor", "icon": "times" },
+        {
+          "name": "Clientes",
+          "enlace": "Clientes",
+          "icon": "times",
+          "selected": true
+        },
+        {
+          "name": "Talleres",
+          "enlace": "Taller",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Tipo intervención",
+          "enlace": "TipoIntervencion",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Ciudades",
+          "enlace": "Ciudades",
+          "icon": "times",
+          "selected": true
+        },
+        {
+          "name": "Cargo personal",
+          "enlace": "CargoPersonal",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Categoría personal",
+          "enlace": "Categoria_Personal",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Personal",
+          "enlace": "Personal",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Area",
+          "enlace": "Zona",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Estados items OT",
+          "enlace": "EstadoItemOT",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Tipo de Falla",
+          "enlace": "ClasificacionDiscrepancia",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        { "name": "Fallas", "enlace": "TipoDiscrepancia", "icon": "times" },
+        {
+          "name": "Causa raíz",
+          "enlace": "CausaRaiz",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Tipos de Eventos",
+          "enlace": "TipoEvento",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Tipos de pasajero",
+          "enlace": "TipoPasajero",
+          "icon": "times",
+          "selected": true
+        },
+        {
+          "name": "Tipos de Detencion",
+          "enlace": "TipoDetencion",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Unidades de medida",
+          "enlace": "UnidadMedida",
+          "icon": "times",
+          "selected": true
+        },
+        {
+          "name": "Marca",
+          "enlace": "Marca",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Propietario",
+          "enlace": "Propietario",
+          "icon": "times",
+          "selected": true
+        },
+        {
+          "name": "Clasificacion Riesgo",
+          "enlace": "ClasificacionRiesgo",
+          "icon": "times",
+          "selected": true
+        },
+        {
+          "name": "Tipo Dispositivo",
+          "enlace": "TipoDispositivo",
+          "icon": "times",
+          "selected": true
+        },
+        {
+          "name": "Motivo Movimiento Materiales",
+          "enlace": "MotivoMovimientoMateriales",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Categorias variables de medicion",
+          "enlace": "CategoriaVariableDeMedicion",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Variables de medicion",
+          "enlace": "VariableDeMedicion",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        }
+      ],
+      "selected": true,
+      "userselected": true
+    },
+    {
+      "name": "Handling",
+      "title": "Handling",
+      "enlace": "",
+      "icon": "cogs",
+      "submenu": [
+        { "name": "Compañias", "enlace": "company", "icon": "times" },
+        { "name": "Handling", "enlace": "Handling", "icon": "times" },
+        { "name": "Tipos de Cabina", "enlace": "TipoCabina", "icon": "times" },
+        { "name": "Servicios", "enlace": "Servicio", "icon": "times" },
+        {
+          "name": "Contratos Handling",
+          "enlace": "ContratoHandling",
+          "icon": "times"
+        },
+        {
+          "name": "Maestro Vuelos",
+          "enlace": "HandlingMasterVuelos",
+          "icon": "times"
+        }
+      ]
+    },
+    {
+      "name": "Componentes",
+      "title": "Componentes",
+      "enlace": "",
+      "icon": "cogs",
+      "submenu": [
+        {
+          "name": "CategoriaComponentes",
+          "enlace": "CategoriaComponentes",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "SubCategoriaComponentes",
+          "enlace": "SubCategoriaComponentes",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Tipos de servicios componente",
+          "enlace": "TipoServicioComponente",
+          "icon": "times"
+        },
+        {
+          "name": "Servicios componente",
+          "enlace": "ServiciosComponente",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Part numbers",
+          "enlace": "PN",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Componentes",
+          "enlace": "Componentes",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        }
+      ],
+      "selected": true,
+      "userselected": true
+    },
+    {
+      "name": "Maquina",
+      "title": "Maquinas",
+      "enlace": "",
+      "icon": "cogs",
+      "submenu": [
+        {
+          "name": "Modelos",
+          "enlace": "Modelo",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Sistemas de Modelo",
+          "enlace": "SistemaModelo",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Subsistemas de Modelo",
+          "enlace": "SubsistemaModelo",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Categoría Maquina",
+          "enlace": "CategoriaMaquina",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Subcategoría Máquina",
+          "enlace": "SubCategoriaMaquina",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "CategoriaServicioMaquina",
+          "enlace": "CategoriaServicioMaquina",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Tipos de servicios Maquina",
+          "enlace": "TipoServicioMaquina",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Servicios Maquina",
+          "enlace": "serviciosmaquina",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Maquina",
+          "enlace": "Maquinas",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Carga Masiva de MaquinaS",
+          "enlace": "ExcelMaquinas",
+          "icon": "times"
+        }
+      ],
+      "selected": true,
+      "userselected": true
+    },
+    {
+      "name": "Offline",
+      "title": "Offline",
+      "enlace": "GestionRecursos",
+      "icon": "chain",
+      "submenu": []
+    },
+    {
+      "name": "Materiales",
+      "title": "Materiales",
+      "enlace": "",
+      "icon": "cubes",
+      "submenu": [
+        {
+          "name": "Categoria Materiales",
+          "enlace": "CategoriaMaterial",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Subcategoria Materiales",
+          "enlace": "SubCategoriaMaterial",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        },
+        {
+          "name": "Materiales",
+          "enlace": "Materiales",
+          "icon": "times",
+          "selected": true,
+          "userselected": true
+        }
+      ],
+      "selected": true,
+      "userselected": true
+    },
+    {
+      "name": "Herramientas",
+      "title": "Herramientas",
+      "enlace": "",
+      "icon": "wrench",
+      "submenu": [
+        {
+          "name": "Categoria Herramientas",
+          "enlace": "CategoriaHerramientas",
+          "icon": "times"
+        },
+        {
+          "name": "Subcategoria Herramientas",
+          "enlace": "SubcategoriaHerramientas",
+          "icon": "times"
+        },
+        {
+          "name": "Part Number Herramientas",
+          "enlace": "PartNumberHerramientas",
+          "icon": "times"
+        },
+        {
+          "name": "Serial Number Herramientas",
+          "enlace": "SerialNumberHerramientas",
+          "icon": "times"
+        },
+        {
+          "name": "Servicios Herramientas",
+          "enlace": "ServiciosHerramientas",
+          "icon": "times"
+        },
+        {
+          "name": "Unidades de medida",
+          "enlace": "UnidadesMedidaHerramientas",
+          "icon": "times"
+        }
+      ]
+    }
+  ]
+}

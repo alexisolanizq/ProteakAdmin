@@ -11,8 +11,6 @@ const jobOrderSlice = createSlice({
   initialState,
   reducers: {
     setJobOrders: (state, action) => {
-      // console.log(action.payload.work_orders.data);
-      
       state.jobOrders = action.payload;
     },
     addJobOrders: (state, action) => {

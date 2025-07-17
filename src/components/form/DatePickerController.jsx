@@ -5,11 +5,11 @@ import DatePicker from "src/components/form/DatePicker";
 const DatePickerController = ({
   name,
   label,
-  rules,
   control,
-  onChange = () => {},
-  className = "mb-4",
+  rules = {},
   defaultValues,
+  className = "mb-2",
+  onChange = () => {},
 }) => {
   return (
     <Controller
@@ -21,18 +21,22 @@ const DatePickerController = ({
         field: { onChange: onChangeField, value, onBlur },
         fieldState: { error },
       }) => (
-        <DatePicker
-          name={name}
-          label={label}
-          className={className}
-          onChange={(event) => {
-            onChange(event);
-            onChangeField(event);
-          }}
-          onBlur={onBlur}
-          value={value}
-          error={!!error}
-        />
+        <div className="flex flex-col flex-1">
+          <DatePicker
+            name={name}
+            label={label}
+            className={className}
+            onChange={(event) => {
+              onChange(event);
+              onChangeField(event);
+            }}
+            onBlur={onBlur}
+            value={value}
+            error={!!error}
+          />
+          {error && <p className="text-red-500 font-semibold">{error.message}</p>}
+          <p></p>
+        </div>
       )}
     />
   );
@@ -41,7 +45,7 @@ const DatePickerController = ({
 DatePickerController.propTypes = {
   control: PropTypes.any,
   name: PropTypes.string,
-  rules: PropTypes.array,
+  rules: PropTypes.object,
   label: PropTypes.string,
   onChange: PropTypes.func,
   isLoading: PropTypes.bool,

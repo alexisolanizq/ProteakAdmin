@@ -20,11 +20,7 @@ const Login = () => {
           label="Correo"
           className="mb-5"
           type="email"
-          rules={[
-            {
-              required: "Campo requerido",
-            },
-          ]}
+          rules={[{ required: "Campo requerido" }]}
         />
         <TextFieldController
           name="pass"

@@ -29,7 +29,7 @@ const useJobOrder = () => {
   const columns = JobOrdersColumns({ onEdit, onDetails });
 
   const actions = [
-    <Button key={1} onClick={() => console.log("Agregando")}>
+    <Button key={1} onClick={() => onEdit()}>
       Nueva Orden
     </Button>,
   ];

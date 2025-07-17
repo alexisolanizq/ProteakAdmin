@@ -10,8 +10,6 @@ const machineSlice = createSlice({
   initialState,
   reducers: {
     setMachines: (state, action) => {
-      // console.log(state, action.payload.machines.data);
-      
       state.machines = action.payload;
     },
     setIsLoading: (state, action) => {

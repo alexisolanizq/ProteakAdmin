@@ -13,6 +13,7 @@ const useUsageSheet = () => {
     isOpen,
     openModal,
   } = useModal();
+  
   const { today, firstDayOfMonth } = useMemo(() => {
     return convertDatesToTimestamps();
   }, []);

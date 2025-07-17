@@ -1,7 +1,7 @@
 import { Outlet } from "react-router-dom";
-import useSidebar from "src/hooks/common/useSidebar";
-import Sidebar from "src/components/common/Sidebar";
 import Navbar from "src/components/common/Navbar";
+import Sidebar from "src/components/common/Sidebar";
+import useSidebar from "src/hooks/common/useSidebar";
 
 const Layout = () => {
   const { toggleSidebar, sidebarOpen, collapsed, isMobile } = useSidebar();
@@ -20,14 +20,13 @@ const Layout = () => {
           <div className="w-64 bg-gray-800 text-white">
             <Sidebar collapsed={false} />
           </div>
-          <div
+          <button
             className="flex-1 bg-black bg-opacity-50"
             onClick={() => toggleSidebar()}
           />
         </div>
       )}
 
-      {/* <Sidebar openSidebar={sidebarOpen} collapsed={collapsed} /> */}
       <div className="flex-1 bg-[#F3F6FE] min-h-dvh relative overflow-hidden">
         <Navbar toggleSidebar={toggleSidebar} />
         <main className="flex-1 bg-gray-100">

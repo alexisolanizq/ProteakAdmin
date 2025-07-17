@@ -1,11 +1,11 @@
 import GeneralLayout from "src/components/common/GeneralLayout";
 import StatusCell from "src/components/common/StatusCell";
-import PDFPreview from "src/components/form/PDFPreview";
 import useJobOrderByID from "src/hooks/models/job-order/useJobOrderByID";
 
 const JobOrderByID = () => {
-  const { isLoading, otByID, isSuccess, header, formData, getPDF } =
+  const { isLoading, otByID, isSuccess, getPDF, employee } =
     useJobOrderByID();
+  const headerDatos = otByID && JSON.parse(otByID?.[0]?.headerdatos)?.[0]
 
   return (
     <GeneralLayout
@@ -55,7 +55,7 @@ const JobOrderByID = () => {
             <div>
               <span className="text-gray-500">Responsable:</span>
               <div className="font-semibold text-gray-800">
-                {otByID?.[0].responsable || "No asignado"}
+                {employee?.name || "No asignado"}
               </div>
             </div>
             <div>
@@ -73,19 +73,20 @@ const JobOrderByID = () => {
             <div>
               <span className="text-gray-500">Modelo:</span>
               <div className="font-semibold text-gray-800">
-                {header?.modelo_matri}
+
+                {headerDatos?.modelo_matri}
               </div>
             </div>
             <div>
               <span className="text-gray-500">Zona:</span>
               <div className="font-semibold text-gray-800">
-                {header?.zona_matri}
+                {headerDatos?.zona_matri}
               </div>
             </div>
             <div>
               <span className="text-gray-500">Serie:</span>
               <div className="font-semibold text-gray-800">
-                {header?.serie_matri?.trim()}
+                {headerDatos?.serie_matri}
               </div>
             </div>
           </div>
@@ -108,7 +109,7 @@ const JobOrderByID = () => {
             </button>
           </div>
 
-          <div className="my-10">{formData && <PDFPreview />}</div>
+          {/* <div className="my-10">{formData && <PDFPreview />}</div> */}
         </div>
       )}
     </GeneralLayout>

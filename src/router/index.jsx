@@ -1,10 +1,13 @@
 import { createBrowserRouter } from "react-router-dom";
+import Examples from "src/components/common/Examples";
 import Layout from "src/components/common/Layout";
 import Cecos from "src/views/admin/cecos/Cecos";
 import DailyStatus from "src/views/admin/daily-status/DailyStatus";
+import Detentions from "src/views/admin/detentions/Detentions";
 import EquipmentLifeSheet from "src/views/admin/equipment-life-sheet/EquipmentLifeSheet";
 import Index from "src/views/admin/Index";
 import JobOrderByID from "src/views/admin/job-orders/JobOrderByID";
+import JobOrderPDF from "src/views/admin/job-orders/JobOrderPDF";
 import JobOrders from "src/views/admin/job-orders/JobOrders";
 import Machines from "src/views/admin/machines/Machine";
 import MachineById from "src/views/admin/machines/MachineById";
@@ -47,14 +50,18 @@ const routes = createBrowserRouter([
         path: "ordenes-de-trabajo",
         children: [
           {
-            path: '',
+            path: "",
             element: <JobOrders />,
           },
           {
-            path: ':id',
-            element: <JobOrderByID />
-          }
-        ]
+            path: ":id",
+            element: <JobOrderByID />,
+          },
+          {
+            path: ":id/:id",
+            element: <JobOrderPDF />,
+          },
+        ],
       },
       {
         path: "ordenes",
@@ -98,7 +105,19 @@ const routes = createBrowserRouter([
         path: "estado-diario",
         element: <DailyStatus />,
       },
+      {
+        path: "detenciones",
+        element: <Detentions />,
+      },
+      {
+        path: "pdf",
+        element: <JobOrderPDF />,
+      },
     ],
+  },
+  {
+    path: "example",
+    element: <Examples />,
   },
 ]);
 

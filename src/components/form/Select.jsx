@@ -27,7 +27,9 @@ const Select = ({
           // onChange={onChange}
           {...props}
         >
-          <option value={null}>{placeholder}</option>
+          <option value="">
+            {placeholder}
+          </option>
           {options.map((option, index) => (
             <option key={option[valueKey] || index} value={option[valueKey]}>
               {" "}

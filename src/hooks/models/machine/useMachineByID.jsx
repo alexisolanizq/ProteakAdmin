@@ -4,6 +4,7 @@ import useModal from "src/hooks/common/useModal";
 import { useCecoListService } from "src/services/ceco/cecoService";
 import { useMachineRowService } from "src/services/machine/machineByIDService";
 import { useMachineServices } from "src/services/machine/machineService";
+import { useManufacturerListService } from "src/services/manufacturer/manufacturerService";
 import { useOperativeStateListService } from "src/services/operative-state/operativeStateService";
 import { useOwnerService } from "src/services/owner/ownerService";
 import { useZoneService } from "src/services/zone/zoneService";
@@ -26,8 +27,17 @@ const useMachineByID = () => {
     useOperativeStateListService(id);
   const { data: zones, isLoading: isLoadingZones } = useZoneService(id);
   const { data: owners, isLoading: isLoadingOwners } = useOwnerService();
-  const { data: riskRatingList, isLoading: isLoadingRiskRatingList } =
-    useOwnerService();
+  const { data: riskRatingList, isLoading: isLoadingRiskRatingList } = useOwnerService();
+  const { data: manufacturerList, isLoading: isLoadingManufacturers } = useManufacturerListService();
+
+
+  const manufacturers = useMemo(() => {
+    if (!manufacturerList || !machine) return null;
+
+    return manufacturerList.find(
+      (item) => item.ID === machine?.[0].idfabricante
+    );
+  }, [manufacturerList, machine]);
 
   const riskRating = useMemo(() => {
     if (!riskRatingList || !machine) return null;
@@ -88,6 +98,7 @@ const useMachineByID = () => {
     isLoading,
     riskRating,
     movementZone,
+    manufacturers,
     isLoadingCecos,
     isLoadingZones,
     operativeState,
@@ -97,6 +108,7 @@ const useMachineByID = () => {
     openMaterialsModal,
     closeMaterialModal,
     isOpenMaterialsModal,
+    isLoadingManufacturers,
     isLoadingRiskRatingList,
     isLoadingOperativeState,
     materialServiceComponent,

@@ -6,7 +6,7 @@ import {
 } from "src/constants/modelsApi";
 import { STORE_MACHINES } from "src/constants/store";
 import { setMachines } from "src/redux/machineSlice";
-import { useListService } from "src/services/services";
+import { useListActiveService, useListService } from "src/services/services";
 import { useGET } from "src/utils/api";
 
 export const useMachineListService = () =>
@@ -16,6 +16,12 @@ export const useMachineListService = () =>
     // url: API_MACHINES,
     onSaveList: setMachines,
     listName: STORE_MACHINES,
+  });
+
+export const useMachineActiveListService = () =>
+  useListActiveService({
+    service: useMachineListService,
+    status: "state",
   });
 
 export const useMachineServices = (id) =>

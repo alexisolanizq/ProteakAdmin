@@ -1,8 +1,9 @@
-import { commonProperties } from "src/components/common/DataTable";
-import StatusCell from "src/components/common/StatusCell";
 import { formatDate } from "src/utils/dates";
+import StatusCell from "src/components/common/StatusCell";
+import { commonProperties } from "src/components/common/DataTable";
+import Button from "src/components/common/Button";
 
-const EquipmentLifeSheetColumns = () => [
+const EquipmentLifeSheetColumns = ({ onDetails }) => [
   {
     ...commonProperties,
     field: "folio",
@@ -47,6 +48,19 @@ const EquipmentLifeSheetColumns = () => [
     headerName: "Fecha cierre",
     minWidth: 160,
     renderCell: ({ row }) => formatDate(row?.fecha_cierre),
+  },
+  {
+    ...commonProperties,
+    field: "actions",
+    headerName: "Acciones",
+    minWidth: 190,
+    type: "actions",
+    getActions: ({ row }) => [
+      <Button key={row} onClick={() => onDetails(row?.idot)}>
+        {row?.folio}
+        <i className="ri-external-link-line ml-2" />
+      </Button>,
+    ],
   },
 ];
 

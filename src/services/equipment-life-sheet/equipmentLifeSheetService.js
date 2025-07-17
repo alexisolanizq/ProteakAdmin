@@ -3,10 +3,10 @@ import { STORE_EQUIPMENT_LIFE_SHEETS } from "src/constants/store";
 import { setEquipmentLifeSheets } from "src/redux/equipmentLifeSheetSlice";
 import { useListService } from "src/services/services";
 
-export const useEquipmentLifeSheetService = () =>
+export const useEquipmentLifeSheetService = (machine, service, workshop) =>
   useListService({
     store: STORE_EQUIPMENT_LIFE_SHEETS,
-    url: API_RESUME_REPORT_SOFTMANTTO,
+    url: API_RESUME_REPORT_SOFTMANTTO(machine, service, workshop),
     onSaveList: setEquipmentLifeSheets,
     listName: STORE_EQUIPMENT_LIFE_SHEETS,
   });

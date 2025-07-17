@@ -2,61 +2,50 @@ import { StyleSheet } from "@react-pdf/renderer";
 
 export default StyleSheet.create({
   page: {
-    padding: 30,
-    fontSize: 12,
+    padding: 40,
+    fontSize: 10,
     fontFamily: "Helvetica",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
   },
-  title: {
-    fontSize: 20,
-    textAlign: "center",
-    marginBottom: 20,
+  section: { marginBottom: 40 },
+  heading: {
+    fontSize: 16,
+    marginBottom: 4,
+    color: "#1a202c",
     fontWeight: "bold",
   },
-  section: {
-    marginBottom: 20,
-  },
-  sectionTitle: {
-    fontSize: 14,
-    marginBottom: 5,
-    fontWeight: "bold",
-    textDecoration: "underline",
-  },
-  table: {
-    display: "table",
-    width: "auto",
-    borderStyle: "solid",
-    borderWidth: 1,
-    borderRightWidth: 0,
-    borderBottomWidth: 0,
-  },
-  tableHeader: {
+  subheading: { fontSize: 12, fontWeight: "bold", marginBottom: 8 },
+  label: { fontWeight: "bold", color: "#4a5568" },
+  value: { color: "#2d3748" },
+  row: {
+    gap: 10,
+    marginBottom: 6,
+    display: "flex",
     flexDirection: "row",
-    backgroundColor: "#eeeeee",
-    borderBottom: 1,
-    borderBottomColor: "#000",
+    justifyContent: "space-between",
   },
-  tableRow: {
-    flexDirection: "row",
-    borderBottom: 1,
-    borderBottomColor: "#ccc",
+  content:{
+    display: "flex",
+    flexDirection: 'column',
+    gap: 20,
   },
-  tableColHeader: {
-    width: "33.33%",
-    borderRight: 1,
-    borderRightColor: "#000",
-    padding: 5,
-    fontWeight: "bold",
-  },
-  tableCol: {
-    width: "33.33%",
-    borderRight: 1,
-    borderRightColor: "#ccc",
-    padding: 5,
+  block: {
+    borderBottomWidth: 1,
+    borderColor: "#e2e8f0",
+    paddingBottom: 8,
+    marginBottom: 2,
   },
   footer: {
+    marginTop: 20,
+    paddingTop: 20,
+  },
+  firmas: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
     marginTop: 30,
-    textAlign: "right",
-    fontSize: 14,
-    fontWeight: "bold",
+    paddingHorizontal: 10,
   },
 });

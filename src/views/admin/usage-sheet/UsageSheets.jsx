@@ -17,10 +17,10 @@ const UsageSheets = () => {
       >
         <RequestUsageSheet />
         <DataTable
-          isLoading={isLoading}
+          withMarginBottom
           columns={columns}
           data={usageSheets}
-          withMarginBottom
+          isLoading={isLoading}
           sorting={sorting("date", "desc")}
         />
       </GeneralLayout>

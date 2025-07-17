@@ -23,6 +23,7 @@ const MachineById = () => {
     isOpenMaterialsModal,
     materialServiceComponent,
     riskRating,
+    manufacturers,
   } = useMachineByID();
 
   const ceco = cecos.find(
@@ -35,7 +36,7 @@ const MachineById = () => {
         isLoading={isLoading}
         title={`${machine?.[0].name}`}
         resumen="Se muestran los datos del equipo"
-        // isFullWidth={false}
+      // isFullWidth={false}
       >
         {isSuccess && (
           <>
@@ -156,7 +157,7 @@ const MachineById = () => {
                   {renderDato("Estado Operativo", opState?.estadooperativo)}
                   {renderDato("Zona", movementZone?.zona_final)}
                   {renderDato("Taller", machine?.[0].taller ?? "—")}
-                  {renderDato("Fabricante", machine?.[0].idfabricante)}
+                  {renderDato("Fabricante", manufacturers?.name)}
                   {renderDato("Propietario", owner?.name)}
                   {renderDato("Clasificación Riesgo", riskRating?.name, 'risk-')}
                   {renderDato("Categoría", machine?.[0].idcategoriamaquina)}

@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useGET, usePOST } from "src/utils/api";
+import { filterByStatus } from "src/utils/array";
 import { isValid } from "src/utils/values";
 
 export const useListService = ({
@@ -17,7 +18,7 @@ export const useListService = ({
   const shouldEnable =
     typeof enable === "boolean" ? enable : !isValid(list) || list.length === 0;
 
-  const { isFetching } = useGET({
+  const { isFetching, refetch } = useGET({
     url,
     enable: shouldEnable,
     onSuccess: (response) => {
@@ -30,6 +31,16 @@ export const useListService = ({
   return {
     data: list || [],
     isLoading: isFetching,
+    refetch,
+  };
+};
+
+export const useListActiveService = ({ service, status }) => {
+  const { data, isLoading } = service();
+
+  return {
+    data: filterByStatus(data, status),
+    isLoading,
   };
 };
 

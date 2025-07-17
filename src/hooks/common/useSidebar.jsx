@@ -4,12 +4,17 @@ import { getStorage } from "src/utils/storage";
 const useSidebar = () => {
   const [collapsed, setCollapsed] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [rightSidebar, setRightSidebar] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
   const toggleSidebar = () => {
     setCollapsed(!collapsed)
     setSidebarOpen(!sidebarOpen)
   };
+
+  const toggleRightSidebar = () => {
+    setRightSidebar(!rightSidebar)
+  }
 
   useEffect(() => {
     const savedCollapsed = getStorage("sidebar-collapsed");
@@ -24,7 +29,7 @@ const useSidebar = () => {
     }
   }, [collapsed, isMobile]);
 
-    useEffect(() => {
+  useEffect(() => {
     const checkMobile = () => {
       const mobile = window.innerWidth < 768;
       setIsMobile(mobile);
@@ -44,7 +49,9 @@ const useSidebar = () => {
     isMobile,
     collapsed,
     sidebarOpen,
+    rightSidebar,
     toggleSidebar,
+    toggleRightSidebar
   };
 };
 

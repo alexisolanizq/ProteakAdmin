@@ -105,9 +105,9 @@ export const sidebarList = [
   {
     id: 10,
     show: true,
-    name: "Alertas",
+    name: "Detenciones",
     icon: "ri-error-warning-line",
-    link: "/",
+    link: "/detenciones",
     submenu: [],
     active: false,
   },

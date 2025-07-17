@@ -77,7 +77,6 @@ const JobOrdersForm = ({
         rules={[{ required: "Campo requerido" }]}
       />
 
-      <ButtonsForm onCancel={onCancel} isLoading={isLoadingMutation} />
     </Form>
   );
 };

@@ -7,12 +7,21 @@ export const API_LOGIN_SOFTMANTTO = "/auth/Login";
 export const API_MACHINES_SOFTMANTTO = "/Matris/6";
 export const API_CECOS_SOFTMANTTO = "/CentroCosto/6";
 export const API_OT_STATUS_SOFTMANTTO = "/EstadosOT";
-export const API_WORKSHOP_SOFTMANTTO = "/taller/6/0";
+export const API_WORKSHOP_SOFTMANTTO = "/taller/6";
 export const API_OWNER_SOFTMANTTO = `/Propietario/6/0`;
 export const API_CATEGORIES_SOFTMANTTO = `/CategoriaMaquina/6/0`;
 export const API_MACHINE_BY_ID_SOFTMANTTO = "/Matri/idmatri";
 export const API_RISK_RATING_SOFTMANTTO = "/ClasificacionRiesgo/6/0";
-export const API_RESUME_REPORT_SOFTMANTTO = "/Informe/HojaVida/Matri/6/0/0/0";
+export const API_MANUFACTURERS_SOFTMANTTO = "/Fabricante/6/0";
+export const API_ZONES_SOFTMANTTO = "/Zona/6/0";
+export const API_EMPLOYEES_SOFTMANTTO = "/Personal/Categoria/6/0";
+
+
+export const API_DETENTIONS_BY_MATRI_SOFTMANTTO = (matri) =>
+  `/Matri/List/State/State/State/${matri}`;
+
+export const API_RESUME_REPORT_SOFTMANTTO = (matri, service, taller) =>
+  `/Informe/HojaVida/Matri/6/${matri}/${service}/${taller}`;
 export const API_DAILY_STATUS_SOFTMANTTO =
   "/Informe/EstadoDiario/6/0/0/0?utc_offset=-180";
 

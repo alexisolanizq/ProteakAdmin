@@ -15,7 +15,7 @@ const Modal = ({
       className={`fixed w-full h-dvh top-0 left-0 bg-black/40 ${
         isShow ? "block" : "hidden"
       }`}
-      onClick={onClose}
+      // onClick={onClose}
     >
       <dialog
         aria-modal="true"

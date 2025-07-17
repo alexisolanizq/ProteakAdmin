@@ -24,5 +24,10 @@ export const findItem = (item, value) =>
     return false;
   });
 
+export const filterByStatus = (list, statusName = "") => {
+  const newList = [...list];
+  return newList.filter((item) => item[statusName]);
+};
+
 export const filterByValue = (list, value) =>
   list.filter((row) => findItem(row, value));
